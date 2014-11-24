@@ -24,6 +24,10 @@ li {
 	margin-top: 5px;
 }
 
+.number, .operator, .other {
+	cursor: pointer;
+}
+
 
 
 .number {
