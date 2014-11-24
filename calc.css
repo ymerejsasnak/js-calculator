@@ -41,6 +41,11 @@ li {
 	padding-top: 2px;
 }
 
+.number:active {
+	background: linear-gradient(#567, #765);
+	border: 1px solid black;
+}
+
 
 
 .operator {
@@ -51,6 +56,11 @@ li {
 	text-align: center;
 	box-shadow: 0 0 1px black;
 	border-radius: 20%;
+}
+
+.operator:active {
+	background: linear-gradient(#840, #ccc);
+	border: 1px solid black;
 }
 
 #mul {
@@ -66,5 +76,10 @@ li {
 	text-align: center;
 	box-shadow: 0 0 1px black;
 	border-radius: 40%;
+}
+
+.other:active {
+	background: linear-gradient(#004, #ccc);
+	border: 1px solid black;
 }
 
