@@ -1,7 +1,9 @@
 function display(current_number) {
 	if (current_number.length === 0) {
 		$("#display").text(0);
-	} else {
+	} else if (current_number.length > 10) {
+    $("#display").text("OVERFLOW");
+  }	else {
   $("#display").text(current_number.join(""));
   }
 }
@@ -9,9 +11,13 @@ function display(current_number) {
 
 //converts array of string 'numbers' into actual number for the math
 function convert(number_array) {
-  number = number_array.join("");
-  number = parseInt(number);
-  return number;
+	if (number_array.length === 0) {
+		return 0;
+	} else {
+		number = number_array.join("");
+    number = parseInt(number);
+    return number;
+  }
 }
 
 
@@ -46,7 +52,7 @@ $(document).ready(function(){
   
   var current_number = [];
   var previous_number = [];
-  var operator;
+  var operator = "";
 
   display(current_number);
 
@@ -68,33 +74,33 @@ $(document).ready(function(){
 
   $(".operator").click(function() {
   	previous_number = current_number;
-  	current_number = [];
-    
+    current_number = [];
     operator = $(this).attr("id");
-
   });
 
 
 
   $("#equals").click(function() {
-    switch(operator) {
+  	switch(operator) {
     	case "add":
-    	  current_number = add(convert(previous_number), convert(current_number));
-    	  current_number = revert(current_number);
-    	  break;
-    	case "sub":
-    	  current_number = subtract(convert(previous_number), convert(current_number));
-    	  current_number = revert(current_number);
-    	  break;
-    	case "mul":
-    	  current_number = multiply(convert(previous_number), convert(current_number));
-    	  current_number = revert(current_number);
-    	  break;
-    	case "div":
-    	  current_number = divide(convert(previous_number), convert(current_number));
-    	  current_number = revert(current_number);
-    	  break;
+     	  current_number = add(convert(previous_number), convert(current_number));
+     	  break;
+     	case "sub":
+     	  current_number = subtract(convert(previous_number), convert(current_number));
+     	  break;
+     	case "mul":
+     	  current_number = multiply(convert(previous_number), convert(current_number));
+     	  break;
+     	case "div":
+     	  current_number = divide(convert(previous_number), convert(current_number));
+     	  break;
     }
+    
+    if (operator != "") {
+    	current_number = revert(current_number);
+      operator = "";
+    }
+    
     display(current_number);
   });
 
