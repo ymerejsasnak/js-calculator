@@ -1,6 +1,6 @@
 #calc-body {
 	background: linear-gradient(#555, #888);
-	width: 130px;
+	width: 129px;
 	padding: 10px;
 	margin: 0 auto;
 	margin-top: 100px;
@@ -30,15 +30,26 @@ li {
 
 
 
+#display{
+   background: #ef7;
+   border: 2px solid black;
+   width: 126px;
+   height: 30px;
+   margin-bottom: 5px;
+   border-radius: 15%;
+}
+
+
+
 .number {
 	background: linear-gradient(#abc, #cba);
 	border: 1px solid black;
-	width: 40px;
+	width: 41px;
 	height: 20px;
 	box-shadow: 0 0 1px black;
 	border-radius: 10%;
 	text-align: center;
-	padding-top: 2px;
+	padding-top: 3px;
 }
 
 .number:active {
@@ -72,7 +83,7 @@ li {
 .other {
 	background: linear-gradient(#337, #fff);
 	border: 1px solid black;
-	width: 63px;
+	width: 62px;
 	text-align: center;
 	box-shadow: 0 0 1px black;
 	border-radius: 40%;
