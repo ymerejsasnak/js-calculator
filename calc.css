@@ -1,3 +1,9 @@
+body {
+	background: lightgray;
+}
+
+
+
 #calc-body {
 	background: linear-gradient(#555, #888);
 	width: 129px;
@@ -37,6 +43,12 @@ li {
    height: 30px;
    margin-bottom: 5px;
    border-radius: 15%;
+   font-family: courier;
+   font-size: 20px;
+   font-weight: bold;
+   text-align: right;
+   padding-top: 10px;
+   padding-right: 3px;
 }
 
 
