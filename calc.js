@@ -1,8 +1,8 @@
-function display() {
-	if (first_number.length === 0) {
+function display(current_number) {
+	if (current_number.length === 0) {
 		$("#display").text(0);
 	} else {
-  $("#display").text(first_number.join(""));
+  $("#display").text(current_number.join(""));
   }
 }
 
@@ -28,32 +28,40 @@ function divide(x, y) {
 
 
 
-var first_number = [];  //these are global for now, but should switch once i figure out 'current number' and 'prev number' issues
-var second_number = [];
+
 
 
 
 $(document).ready(function(){
   
-  display();
+  var current_number = [];
+  var previous_number = [];
+
+  display(current_number);
 
 
   $(".number").click(function(){
   	
-  	if (first_number.length < 10) {
-  	  first_number.push($(this).attr("data"));
+  	if (current_number.length < 10) {
+  	  current_number.push($(this).attr("data"));
   	}
 
-  	if (first_number[0] === "0") {
-  		first_number = [];
+  	if (current_number[0] === "0") {
+  		current_number = [];
   	}
     
-  	display();
+  	display(current_number);
   });
 
 
 
   
+
+
+  $("#clear").click(function() {
+    current_number = [];
+    display(current_number);
+  });
   
 
 });
