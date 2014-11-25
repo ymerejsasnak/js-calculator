@@ -7,8 +7,22 @@ function display(current_number) {
 }
 
 
+//converts array of string 'numbers' into actual number for the math
+function convert(number_array) {
+  number = number_array.join("");
+  number = parseInt(number);
+  return number;
+}
+
+
+//reverts back to array of string numbers
+function revert(number) {
+  return (String(number)).split("")
+}
+
+
 function add(x, y) {
-	return x + y;
+  return x + y;
 } 
 
 
@@ -28,14 +42,11 @@ function divide(x, y) {
 
 
 
-
-
-
-
 $(document).ready(function(){
   
   var current_number = [];
   var previous_number = [];
+  var operator;
 
   display(current_number);
 
@@ -55,8 +66,39 @@ $(document).ready(function(){
 
 
 
-  
+  $(".operator").click(function() {
+  	previous_number = current_number;
+  	current_number = [];
+    
+    operator = $(this).attr("id");
 
+  });
+
+
+
+  $("#equals").click(function() {
+    switch(operator) {
+    	case "add":
+    	  current_number = add(convert(previous_number), convert(current_number));
+    	  current_number = revert(current_number);
+    	  break;
+    	case "sub":
+    	  current_number = subtract(convert(previous_number), convert(current_number));
+    	  current_number = revert(current_number);
+    	  break;
+    	case "mul":
+    	  current_number = multiply(convert(previous_number), convert(current_number));
+    	  current_number = revert(current_number);
+    	  break;
+    	case "div":
+    	  current_number = divide(convert(previous_number), convert(current_number));
+    	  current_number = revert(current_number);
+    	  break;
+    }
+    display(current_number);
+  });
+
+  
 
   $("#clear").click(function() {
     current_number = [];
