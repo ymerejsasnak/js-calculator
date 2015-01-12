@@ -1,10 +1,9 @@
-js-calculator
-=============
+##A javascript calculator (assignment from the Odin Project)
 
-Odin project - a javascript calculator
-<br>
-<br>
-possible future functionality:<br>
--negative/positive button<br>
--properly working floating point numbers!<br>
--maybe other typical calculator buttons
+Second ever javascript project.  Has issues that I may never feel like coming back to resolve...we shall see...
+
+####Possible future work:
+* negative/positive button<br>
+* other typical calculator buttons (memory, powers, sqrt, etc)
+* Main issue: does NOT handle floating point numbers well :)
+
